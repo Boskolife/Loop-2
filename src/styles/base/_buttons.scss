@@ -1,0 +1,44 @@
+.button {
+    display: inline-block;
+    background-color: $purple-500;
+    color: $white;
+    font-weight: 600;
+
+    @include adaptive-value("font-size", 18, 16, 1);
+    padding: 16px 32px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: $animation-speed;
+
+    line-height: calc(22 / 18);
+
+    @include media ("<tablet") {
+        padding: 12px 20px;
+        border-radius: 4px;
+    }
+
+    &.button-secondary {
+        border-color: $purple-500;
+        background-color: $black;
+        box-shadow: 0px 1px 8px 0px #FF6B00;
+
+        &:hover {
+            background-color: $purple-700;
+            transition: $animation-speed;
+        }
+    }
+
+    &:disabled {
+        box-shadow: none;
+        border-color: transparent;
+        background-color: $purple-800;
+        cursor: not-allowed;
+
+        color: rgba($color: $purple-600, $alpha: 0.52);
+
+        &::after,
+        &::before {
+            display: none;
+        }
+    }
+}

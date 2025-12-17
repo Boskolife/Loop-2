@@ -64,6 +64,16 @@
         @include gradient-text-color;
         @include adaptive-value("font-size", 100, 48, 1);
         @include adaptive-value("margin-bottom", 20, 16, 1);
+
+        br {
+            display: none;
+        }
+
+        @include media ("<phone") {
+            br {
+                display: block;
+            }
+        }
     }
 
     &_description {
